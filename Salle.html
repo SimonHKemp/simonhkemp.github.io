@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Engineering Portfolio</title>
+
+<style>
+:root {
+    --primary: #1f2937;
+    --accent: #2563eb;
+    --light: #f9fafb;
+    --gray: #6b7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: var(--primary);
+    line-height: 1.6;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    border-left: 6px solid var(--accent);
+    padding-left: 10px;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.hero img {
+    width: 300px;
+    border-radius: 12px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    gap: 25px;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Work Experience */
+.job {
+    margin-bottom: 30px;
+}
+
+.job h3 {
+    margin-bottom: 5px;
+}
+
+.job span {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Artwork */
+.artwork img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close-btn {
+    margin-top: 20px;
+    padding: 8px 15px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@media(max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero img {
+        margin-top: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hello, I'm Your Name</h1>
+        <p>Engineering student specializing in mechanical systems, robotics, and product design. Passionate about solving real-world problems through innovative engineering solutions.</p>
+    </div>
+    <img src="https://via.placeholder.com/300" alt="Profile Picture">
+</section>
+
+<!-- MAJOR PROJECTS -->
+<section>
+    <h2>Major Projects</h2>
+    <div class="grid grid-3">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="">
+            <h3>Project One</h3>
+            <p>Brief description of your major project and technologies used.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="">
+            <h3>Project Two</h3>
+            <p>Brief description of your major project and technologies used.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="">
+            <h3>Project Three</h3>
+            <p>Brief description of your major project and technologies used.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SMALL PROJECTS (CLICK THROUGH) -->
+<section>
+    <h2>Other Projects</h2>
+    <div class="grid grid-3">
+        <div class="card" onclick="openModal('Small Project A', 'Detailed description of small project A.')">
+            <h3>Small Project A</h3>
+            <p>Click to learn more.</p>
+        </div>
+        <div class="card" onclick="openModal('Small Project B', 'Detailed description of small project B.')">
+            <h3>Small Project B</h3>
+            <p>Click to learn more.</p>
+        </div>
+        <div class="card" onclick="openModal('Small Project C', 'Detailed description of small project C.')">
+            <h3>Small Project C</h3>
+            <p>Click to learn more.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section>
+    <h2>Work Experience</h2>
+    <div class="job">
+        <h3>Engineering Intern – Company Name</h3>
+        <span>May 2024 – August 2024</span>
+        <p>Describe your responsibilities, achievements, and technologies used.</p>
+    </div>
+    <div class="job">
+        <h3>Research Assistant – University Lab</h3>
+        <span>2023 – Present</span>
+        <p>Describe your work, projects, and contributions.</p>
+    </div>
+</section>
+
+<!-- ARTWORK -->
+<section>
+    <h2>Artwork</h2>
+    <div class="grid grid-3 artwork">
+        <img src="https://via.placeholder.com/400" alt="">
+        <img src="https://via.placeholder.com/400" alt="">
+        <img src="https://via.placeholder.com/400" alt="">
+        <img src="https://via.placeholder.com/400" alt="">
+        <img src="https://via.placeholder.com/400" alt="">
+        <img src="https://via.placeholder.com/400" alt="">
+    </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script>
+function openModal(title, text) {
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-text").innerText = text;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById("modal")) {
+        closeModal();
+    }
+}
+</script>
+
+</body>
+</html>
